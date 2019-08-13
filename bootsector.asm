@@ -6,18 +6,16 @@ mov ds, ax
 mov bp, 0xFFFF
 mov sp, bp
 
-jmp start
-
-start:
-
 mov ax, hello_world
 call print
 
-jmp end
+jmp _bootsector_end
 
 %include "print.asm"
+%include "print_hex_byte.asm"
+%include "print_hex_bytes.asm"
 
-end:
+_bootsector_end:
 
 ; Hang forever.
 jmp $

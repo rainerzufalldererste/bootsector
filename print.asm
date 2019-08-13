@@ -1,3 +1,6 @@
+; `print`
+; ax: address of zero terminated string to print.
+
 print:
 pusha
 mov bx, ax
