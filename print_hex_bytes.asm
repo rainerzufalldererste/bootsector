@@ -15,7 +15,7 @@ add cx, bx
 
 _print_hex_bytes_loop:
 mov al, [bx]
-and al, 0x0F
+shr al, 4
 add al, '0'
 
 cmp al, '9'
@@ -25,7 +25,7 @@ _print_hex_bytes_char1:
 int 0x10
 
 mov al, [bx]
-shr al, 8
+and al, 0xF
 add al, '0'
 
 cmp al, '9'
